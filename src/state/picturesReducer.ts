@@ -8,7 +8,7 @@ interface action {
   type: string;
   payload?: any;
 }
-const picturesReducer = (state: picturesState, action: any): picturesState => {
+const picturesReducer = (state: picturesState, action: action): picturesState => {
   switch (action.type) {
     case "FETCH_PICTURES_SUCCESS":
       return { loading: false, error: null, data: action.payload };
