@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import RecentlyAdded from "./RecentlyAdded";
-import Favorite from "./favorite";
+import Favorite from "./Favorite";
+import { fetchPictures } from "../state/actions";
 
 function PictureList(){
   const [tabvalue, setTabValue]=useState(1)
+
+  useEffect(()=>{
+    
+  })
     return(
         <div className="pictureList">
         <ul className="nav">

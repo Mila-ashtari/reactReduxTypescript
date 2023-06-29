@@ -1,6 +1,21 @@
-import axios from 'axios'
-import { PicturesActionType } from '../actionTypes'
+import axios from "axios";
+import { PicturesActionType } from "../actionTypes";
 
-const fetchPictures=()=>{
-    
-}
+export const fetchPictures = () => {
+  return async (dispatch: any) => {
+    dispatch({
+      type: PicturesActionType.FETCH_PICTURES_LOADING,
+    })
+    try{
+        const data =axios.get('https://agencyanalytics-api.vercel.app/images.json')
+
+
+    }
+    catch(error:any){
+        dispatch({
+            type:PicturesActionType.FETCH_PICTUES_ERROR,
+            payload:error.massage
+        })
+    }
+  };
+};

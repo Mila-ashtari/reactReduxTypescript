@@ -17,8 +17,9 @@ const picturesReducer = (state: picturesState, action: action): picturesState =>
     case PicturesActionType.FETCH_PICTURES_LOADING:
       return { loading: true, error: null, data: [] };
     case PicturesActionType.FETCH_PICTUES_ERROR:
-      return { loading: false, error: null, data: [] };
-
+      return { loading: false, error: action.payload, data: [] };
+    case PicturesActionType.DELETE_PICTURE:
+        return {loading:false, error:null, data:action.payload}
     default:
       return state;
   }
