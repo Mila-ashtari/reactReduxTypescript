@@ -7,7 +7,7 @@ export const fetchPictures = () => {
       type: PicturesActionType.FETCH_PICTURES_LOADING,
     })
     try{
-        const data =axios.get('https://agencyanalytics-api.vercel.app/images.json')
+        const results =axios.get('https://agencyanalytics-api.vercel.app/images.json')
 
 
     }

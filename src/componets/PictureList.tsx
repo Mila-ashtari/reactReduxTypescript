@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import RecentlyAdded from "./RecentlyAdded";
 import Favorite from "./Favorite";
 import { fetchPictures } from "../state/actions";
 
 function PictureList(){
+  const dispatch=useDispatch()
   const [tabvalue, setTabValue]=useState(1)
 
   useEffect(()=>{
-    
+    dispatch(fetchPictures())
   })
     return(
         <div className="pictureList">
@@ -16,7 +18,7 @@ function PictureList(){
           <button className="tabTwo" onClick={()=>{setTabValue(2)}}>Tab 2</button>
         </ul>
         <div className="tabContent">
-          {tabvalue==1 ? <RecentlyAdded/> : <Favorite/>}
+          {/* {tabvalue==1 ? <RecentlyAdded/> : <Favorite/>} */}
           </div>
       </div>
     )

@@ -14,3 +14,5 @@ const favouritesReducer = (state:favouritesState, action:action) => {
       return state;
   }
 };
+
+export default favouritesReducer

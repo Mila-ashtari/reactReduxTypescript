@@ -24,3 +24,5 @@ const picturesReducer = (state: picturesState, action: action): picturesState =>
       return state;
   }
 };
+
+export default picturesReducer
