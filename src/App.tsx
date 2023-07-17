@@ -1,13 +1,21 @@
-import React from 'react';
-import PictureList from './componets/PictureList';
-import './App.css';
+import React from "react";
+import { Provider, ProviderProps } from "react-redux";
+
+import PictureList from "./componets/PictureList";
+import { store } from "./state/store";
+import "./App.css";
+
+const providerProps: ProviderProps = {
+  store: store,
+};
 
 function App() {
-
   return (
-    <div className="App">
-       <PictureList/>
-    </div>
+    <Provider {...providerProps} >
+      <div className="App">
+        <PictureList />
+      </div>
+    </Provider>
   );
 }
 

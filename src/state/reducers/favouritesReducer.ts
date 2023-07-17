@@ -6,7 +6,14 @@ interface action {
   type: string;
   payload?: any;
 }
-const favouritesReducer = (state:favouritesState, action:action) => {
+
+const intialState:favouritesState={
+  data:[]
+}
+const favouritesReducer = (
+  state: favouritesState = intialState,
+  action: action
+) => {
   switch (action.type) {
     case "ADD_FAVOURITE":
       return [...state.data, action.payload];

@@ -5,12 +5,20 @@ interface picturesState {
   error: boolean | null;
   data: string[];
 }
-
 interface action {
   type: string;
   payload?: any;
 }
-const picturesReducer = (state: picturesState, action: action): picturesState => {
+
+const initialState :picturesState = {
+  loading: false,
+  error: null,
+  data: [],
+};
+const picturesReducer = (
+  state: picturesState = initialState,
+  action: action
+): picturesState => {
   switch (action.type) {
     case PicturesActionType.FETCH_PICTURES_SUCCESS:
       return { loading: false, error: null, data: action.payload };
@@ -19,10 +27,10 @@ const picturesReducer = (state: picturesState, action: action): picturesState =>
     case PicturesActionType.FETCH_PICTUES_ERROR:
       return { loading: false, error: action.payload, data: [] };
     case PicturesActionType.DELETE_PICTURE:
-        return {loading:false, error:null, data:action.payload}
+      return { loading: false, error: null, data: action.payload };
     default:
       return state;
   }
 };
 
-export default picturesReducer
+export default picturesReducer;

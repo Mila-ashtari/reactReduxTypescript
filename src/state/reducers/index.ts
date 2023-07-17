@@ -2,7 +2,9 @@ import {combineReducers} from 'redux'
 import favouritesReducer from "./favouritesReducer";
 import picturesReducer from "./picturesReducer";
 
-export default combineReducers({
+const reducers= combineReducers({
     pictures:picturesReducer,
     favourite:favouritesReducer
 })
+
+export default reducers
